@@ -2,13 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Microsoft cloud sandbox",
+            "name": "Example2",
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "Sandbox_ES",
-            "startupObjectId": 22,
-            "startupObjectType": "Page",
+            "startupObjectId": 50100,
+            "startupObjectType": "Table",
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
