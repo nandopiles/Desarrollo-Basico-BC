@@ -84,11 +84,9 @@ table 50100 "CRONUS Course"
         }
         key(Key1; "Instructor Code")
         {
-            Clustered = false;
         }
         key(Key2; "Type")
         {
-            Clustered = false;
         }
     }
 }
