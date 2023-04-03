@@ -51,6 +51,8 @@ page 50111 "LAB Expressions Card"
                 Image = ExecuteBatch;
                 ApplicationArea = All;
 
+                
+
                 trigger OnAction()
                 begin
                     Result := Value1 > Value2;
