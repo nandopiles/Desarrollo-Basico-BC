@@ -30,6 +30,12 @@ table 50200 "LAB PetOwners"
             DataClassification = CustomerContent;
             Caption = 'Email';
         }
+        field(6; "How many pets"; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = '¿Cuántos Animales tiene?';
+
+        }
     }
 
     keys
@@ -39,28 +45,4 @@ table 50200 "LAB PetOwners"
             Clustered = true;
         }
     }
-
-    var
-        myInt: Integer;
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
 }
