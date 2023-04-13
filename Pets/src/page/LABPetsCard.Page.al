@@ -1,16 +1,16 @@
-page 50220 "LAB PetsCard"
+page 50221 "LAB PetsCard"
 {
     PageType = Card;
-    ApplicationArea = All;
+    ApplicationArea = All; //idk how to create a custome id
     UsageCategory = Administration;
     SourceTable = "LAB Pets";
-    Caption = 'Mascotas';
+    Caption = 'Ficha Mascota';
 
     layout
     {
         area(Content)
         {
-            group(PetInfo)
+            group(General)
             {
                 field("No."; Rec."No.")
                 {
@@ -21,28 +21,28 @@ page 50220 "LAB PetsCard"
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
-                    Caption = 'Name';
+                    Caption = 'Nombre';
                 }
                 field("Date of Birth"; Rec."Date of Birth")
                 {
                     ApplicationArea = All;
-                    Caption = 'Date of Birth';
+                    Caption = 'Fecha Nacimiento';
                 }
                 field(Age; Rec.Age)
                 {
                     ApplicationArea = All;
-                    Caption = 'Age';
+                    Caption = 'Edad';
                     Editable = false;
-                }
-                field(Sex; Rec.Sex)
-                {
-                    ApplicationArea = All;
-                    Caption = 'Sex';
                 }
                 field(Microchip; Rec.Microchip)
                 {
                     ApplicationArea = All;
                     Caption = 'Microchip';
+                }
+                field(Sex; Rec.Sex)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Sexo';
                 }
                 field(Species; Rec.Species)
                 {
@@ -54,19 +54,29 @@ page 50220 "LAB PetsCard"
                     ApplicationArea = All;
                     Caption = 'Raza';
                 }
+                field("Preferred Veterinary"; Rec."Preferred Veterinary")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Veterinario Preferido';
+                }
+                field("Veterinary Name"; Rec."Veterinary Name")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Nombre Veterinario';
+                }
                 field(Deceased; Rec.Deceased)
                 {
                     ApplicationArea = All;
                     Caption = 'Fallecido';
                 }
             }
-            group(OwnerInfo)
+            group(Owner)
             {
                 field("Owner No."; Rec."Owner No.")
                 {
                     ApplicationArea = All;
                     Caption = 'No. Propietario';
-                    
+
                 }
                 field("Owner Name"; Rec."Owner Name")
                 {
@@ -89,19 +99,6 @@ page 50220 "LAB PetsCard"
                     Caption = 'Email Propietario';
                 }
             }
-            group(VeterinaryInfo)
-            {
-                field("Preferred Veterinary"; Rec."Preferred Veterinary")
-                {
-                    ApplicationArea = All;
-                    Caption = 'Veterinario Preferido';
-                }
-                field("Veterinary Name"; Rec."Veterinary Name")
-                {
-                    ApplicationArea = All;
-                    Caption = 'Nombre Veterinario';
-                }
-            }
         }
     }
 
@@ -109,9 +106,12 @@ page 50220 "LAB PetsCard"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(VisitsPets)
             {
+                Enabled = CurrPage.ObjectId() = 'MyPage';
                 ApplicationArea = All;
+                Caption = 'Visitas';
+                Image = View;
 
                 trigger OnAction()
                 begin
