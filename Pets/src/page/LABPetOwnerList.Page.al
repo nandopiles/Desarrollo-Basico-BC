@@ -45,10 +45,18 @@ page 50200 "LAB Pet Owner List"
             {
                 ApplicationArea = All;
                 Caption = 'Mascotas';
+                //RunPageLink = "LAB Pets" = field("No."); <--
 
                 trigger OnAction()
+                var
+                    PetsTable: Record "LAB Pets";
+                    OwnerPage: Page "LAB Pet Owner List";
                 begin
+                    PetsTable.Reset();
+                    PetsTable.SetRange("Owner No.", Rec."No.");
 
+                    OwnerPage.SetRecord(PetsTable);
+                    OwnerPage.RunModal();
                 end;
             }
         }

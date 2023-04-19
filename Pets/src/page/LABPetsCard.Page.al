@@ -5,6 +5,7 @@ page 50221 "LAB PetsCard"
     UsageCategory = Administration;
     SourceTable = "LAB Pets";
     Caption = 'Ficha Mascota';
+    //id
 
     layout
     {
@@ -63,6 +64,8 @@ page 50221 "LAB PetsCard"
                 {
                     ApplicationArea = All;
                     Caption = 'Nombre Veterinario';
+
+                    
                 }
                 field(Deceased; Rec.Deceased)
                 {
@@ -77,11 +80,19 @@ page 50221 "LAB PetsCard"
                     ApplicationArea = All;
                     Caption = 'No. Propietario';
 
+                    trigger OnValidate()
+                    var
+                        Owner: Record "LAB PetOwners";
+                    begin
+                        if Owner.Get(Owner."No.", Rec."No.") then
+                            Rec."Owner Name" := Owner.Name;
+                    end;
                 }
                 field("Owner Name"; Rec."Owner Name")
                 {
                     ApplicationArea = All;
                     Caption = 'Nombre Propietario';
+                    Editable = false;
                 }
                 field("Owner Address"; Rec."Owner Address")
                 {
@@ -108,10 +119,10 @@ page 50221 "LAB PetsCard"
         {
             action(VisitsPets)
             {
-                Enabled = CurrPage.ObjectId() = 'MyPage';
+                //Enabled = CurrPage.ObjectId() = 'MyPage';
                 ApplicationArea = All;
                 Caption = 'Visitas';
-                Image = View;
+                //Image = View;
 
                 trigger OnAction()
                 begin

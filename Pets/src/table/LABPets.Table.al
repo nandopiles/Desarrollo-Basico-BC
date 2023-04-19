@@ -94,18 +94,13 @@ table 50220 "LAB Pets"
             DataClassification = CustomerContent;
             Caption = 'Veterinario Preferido';
             TableRelation = "LAB Veterinary";
-
-            /*trigger OnValidate()
-
-            begin
-                "Veterinary Name" := "Preferred Veterinary";
-            end;*/
         }
         field(13; "Veterinary Name"; Text[100])
         {
-            DataClassification = CustomerContent;
             Caption = 'Nombre Veterinario';
             Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup("LAB Veterinary".Name where("No." = field("Preferred Veterinary")));
         }
         field(14; Species; Enum "LAB Species")
         {

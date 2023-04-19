@@ -55,7 +55,7 @@ page 50220 "LAB Pet List"
         {
             action(ViewPetVisits)
             {
-                Enabled = CurrPage.ObjectId() = 'MyPage';
+                //Enabled = CurrPage.ObjectId() = 'MyPage';
                 Caption = 'Visitas';
                 ToolTip = 'Muestra las visitas de la mascota seleccionada.';
                 ApplicationArea = All;

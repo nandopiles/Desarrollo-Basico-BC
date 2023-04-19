@@ -53,7 +53,7 @@ page 50201 "LAB Pet Owner Card"
 
             action(PetsList)
             {
-                Enabled = CurrPage.ObjectId() = 'MyPage'; //It can only be visible on this Page
+                //Enabled = CurrPage.ObjectId() = 'MyPage'; //It can only be visible on this Page
                 ApplicationArea = All;
                 Caption = 'Mascotas';
                 ToolTip = 'Ver las mascotas que tiene el propietario';
@@ -61,6 +61,7 @@ page 50201 "LAB Pet Owner Card"
 
                 trigger OnAction()
                 var
+                    PetList: Record "LAB Pets";
                     OwnerNo: Code[20];
                     FilterString: Text;
                 begin
@@ -68,9 +69,7 @@ page 50201 "LAB Pet Owner Card"
 
                     FilterString := '"Owner No." =' + FORMAT(OwnerNo);
 
-                    // Abrimos la página de lista de mascotas y la filtramos
-                    PetList.SETFILTER(FilterString);
-                    PetList.RUN;
+                    // <--
                 end;
             }
         }

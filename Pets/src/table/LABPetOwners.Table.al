@@ -32,9 +32,10 @@ table 50200 "LAB PetOwners"
         }
         field(6; "How many pets"; Integer)
         {
-            DataClassification = CustomerContent;
             Caption = '¿Cuántos Animales tiene?';
-
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = count("LAB Pets" where("Owner No." = field("No."), Deceased = const(false)));
         }
     }
 

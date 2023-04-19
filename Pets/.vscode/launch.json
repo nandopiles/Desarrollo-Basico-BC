@@ -7,7 +7,7 @@
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "Sandbox_ES",
-            "startupObjectId": 50230,
+            "startupObjectId": 50221,
             "startupObjectType": "Page",
             "schemaUpdateMode": "ForceSync", //When u publish another time the extension it forces the sync if u changed smth
             "breakOnError": "All",
