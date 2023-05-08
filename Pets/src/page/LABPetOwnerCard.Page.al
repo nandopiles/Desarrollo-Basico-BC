@@ -5,6 +5,8 @@ page 50201 "LAB Pet Owner Card"
     UsageCategory = Administration;
     SourceTable = "LAB PetOwners";
     Caption = 'Ficha Propietario';
+    //id
+    DataCaptionExpression = Rec."No." + Rec.Name;
 
     layout
     {

@@ -8,7 +8,7 @@
             "environmentType": "Sandbox",
             "environmentName": "Sandbox_ES",
             "startupObjectId": 50120,
-            "startupObjectType": "Page",
+            "startupObjectType": "Table",
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,

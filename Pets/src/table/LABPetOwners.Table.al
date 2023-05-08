@@ -45,5 +45,8 @@ table 50200 "LAB PetOwners"
         {
             Clustered = true;
         }
+        key(key2; "Phone No.")
+        {
+        }
     }
 }

@@ -125,5 +125,8 @@ table 50220 "LAB Pets"
         {
             Clustered = true;
         }
+        key(key2; "Owner No.")
+        {
+        }
     }
 }

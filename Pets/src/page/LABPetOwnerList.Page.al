@@ -49,14 +49,14 @@ page 50200 "LAB Pet Owner List"
 
                 trigger OnAction()
                 var
-                    PetsTable: Record "LAB Pets";
-                    OwnerPage: Page "LAB Pet Owner List";
+                    Pets: Record "LAB Pets";
                 begin
-                    PetsTable.Reset();
-                    PetsTable.SetRange("Owner No.", Rec."No.");
+                    Pets.SetFilter("Owner No.", Rec."No.");
+                    Pets.FindSet();
 
-                    OwnerPage.SetRecord(PetsTable);
-                    OwnerPage.RunModal();
+                    repeat
+                        Message('%1', Pets);
+                    until Pets.Next() = 0;
                 end;
             }
         }

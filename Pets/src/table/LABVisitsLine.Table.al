@@ -26,9 +26,10 @@ table 50249 "LAB Visits Line"
                 Visits: Record "LAB Visits Concepts";
             begin
                 Description := Visits.Description;
-                if (Visits."Unit Price" <> 0) then
+                if (Visits."Unit Price" <> 0) then begin
                     "Unit Price" := Visits."Unit Price";
-                Quantity := 1;
+                    Quantity := 1;
+                end;
             end;
         }
         field(4; Description; Text[100])
